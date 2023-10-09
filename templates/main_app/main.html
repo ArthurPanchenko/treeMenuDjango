@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load menu %}
+
+{% block nav %}
+
+
+    {% draw 'Food menu' %}
+    {% draw 'Транспорт' %}
+
+    {% endblock nav %}
+
+{% block content %}
+    <div class="container">
+
+        {% if category %}
+        
+            <p>{{ category.title }}</p>
+
+        {% endif %}
+
+    </div>
+{% endblock content %}

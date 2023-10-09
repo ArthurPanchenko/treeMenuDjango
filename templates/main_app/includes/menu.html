@@ -1,0 +1,16 @@
+<ul class="list">
+    <li class="title">
+        <a href="{% url 'category' root_category.title %}">
+            {{ root_category.title }}
+        </a>
+    </li>
+    {% if root_category.nested.count %}
+        <li class="nested">
+            {% for nested in root_category.nested.all %}
+                {% with root_category=nested %}
+                    {% include 'main_app/includes/menu.html' %}
+                {% endwith %}
+            {% endfor %}
+        </li>
+    {% endif %}
+</ul>
